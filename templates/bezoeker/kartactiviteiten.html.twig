@@ -10,8 +10,15 @@
         <article>
             <h3>Er zijn {{ soortactiviteiten|length }} soorten activiteiten </h3>
             <ul class="list-group">
-                {% for activiteit in soortactiviteiten %}
-                <li class="list-group-item text-primary">{{ activiteit.naam }}</li>
+                {% for activiteit in soortactiviteiten %}<ul class="list-group">
+                    <li class="list-group-item text-primary"><b>{{ activiteit.naam }}</b></li>
+                    <li class="list-group-item text-primary"> Beschrijving {{ activiteit.beschrijving }}</li>
+                    <li class="list-group-item text-primary">Prijs: {{ activiteit.prijs }}</li>
+                    <li class="list-group-item text-primary">Tijdsduur: {{ activiteit.tijdsduur }}</li>
+                    <li class="list-group-item text-primary">Minimale leeftijd: {{ activiteit.minLeeftijd }}</li>
+
+
+                    </ul>
                 {% endfor %}
             </ul>
             <p>
